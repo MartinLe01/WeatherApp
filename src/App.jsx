@@ -37,16 +37,18 @@ function App() {
   }
 
   return (
-    <>
-      <header className="text-4xl font-bold text-center mt-12">
+    <div
+      className={`min-h-screen font-display ${isDay ? 'bg-[#6BD6CF]' : 'bg-slate-900'}`}
+    >
+      <header className="relative z-10 text-4xl font-bold text-center mt-12">
         <h1>Weather App</h1>
       </header>
 
       <div
-        className={`w-lg h-60 absolute ${isDay ? 'bg-amber-300' : 'bg-slate-200'} top-0 rounded-b-full inset-auto z-[-1] left-1/2 -translate-x-1/2 transition-colors duration-700`}
+        className={`w-lg h-60 absolute ${isDay ? 'bg-amber-300' : 'bg-slate-200'} top-0 rounded-b-full inset-auto left-1/2 -translate-x-1/2 transition-colors duration-700`}
       ></div>
 
-      <main className="m-auto max-w-lg h-96 backdrop-blur-lg border-solid border-2 mt-8 p-8 rounded-4xl">
+      <main className="m-auto max-w-lg h-96 backdrop-blur-xl border-solid border-2 mt-8 p-8 rounded-4xl mx-4 sm:mx-auto">
         <section>
           <div className="relative">
             <input
@@ -90,7 +92,7 @@ function App() {
             <p>City not found. Please try again.</p>
           ) : (
             <div>
-              <h2 className="font-semibold">
+              <h2 className={`${!city ? 'font-normal' : 'font-semibold'}`}>
                 {!city ? 'Search for city' : city}
               </h2>
               <div className="flex flex-col items-center">
@@ -109,7 +111,7 @@ function App() {
           Weather data by <a href="https://open-meteo.com/">Open-Meteo.com</a>
         </p>
       </footer>
-    </>
+    </div>
   );
 }
 
