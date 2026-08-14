@@ -47,13 +47,21 @@ function App() {
       ></div>
 
       <main className="m-auto max-w-lg h-96 backdrop-blur-lg border-solid border-2 mt-8 p-8 rounded-4xl">
-        <section className="flex justify-center">
-          <input
-            className="border-solid border-2 rounded-full bg-slate-50 min-h-12"
-            ref={inputRef}
-            type="text"
-          />
-          <button onClick={handleSearch}>Show weather</button>
+        <section>
+          <div className="relative">
+            <input
+              className="w-full border-solid border-2 rounded-full bg-slate-50 min-h-12 p-2"
+              ref={inputRef}
+              type="text"
+            />
+            <button
+              onClick={handleSearch}
+              className="absolute right-1 bg-blue-500 top-1/2 -translate-y-1/2 rounded-full w-10 sm:w-24 h-10 flex justify-center items-center gap-1 text-slate-50 transition-[width]"
+            >
+              <span className="material-symbols-outlined">search</span>
+              <p className="hidden sm:block">Search</p>
+            </button>
+          </div>
         </section>
 
         <section>
