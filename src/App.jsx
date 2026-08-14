@@ -43,7 +43,7 @@ function App() {
       </header>
 
       <div
-        className={`w-lg h-60 absolute ${isDay ? 'bg-amber-300' : 'bg-slate-200'} top-0 rounded-b-full inset-auto z-[-1] left-1/2 -translate-x-1/2`}
+        className={`w-lg h-60 absolute ${isDay ? 'bg-amber-300' : 'bg-slate-200'} top-0 rounded-b-full inset-auto z-[-1] left-1/2 -translate-x-1/2 transition-colors duration-700`}
       ></div>
 
       <main className="m-auto max-w-lg h-96 backdrop-blur-lg border-solid border-2 mt-8 p-8 rounded-4xl">
@@ -64,17 +64,36 @@ function App() {
           </div>
         </section>
 
-        <section>
+        <section className="flex flex-col items-center text-3xl mt-4">
           {isLoading ? (
-            <p>Loading...</p>
+            <svg
+              className="animate-spin h-24 w-24 text-blue-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+              />
+            </svg>
           ) : error ? (
             <p>City not found. Please try again.</p>
           ) : (
             <div>
-              <div>
-                <h2>{!city ? 'Search for city' : city}</h2>
-              </div>
-              <div>
+              <h2 className="font-semibold">
+                {!city ? 'Search for city' : city}
+              </h2>
+              <div className="flex flex-col items-center">
                 <p>
                   {weather &&
                     `${Math.round(weather.data.current_weather.temperature)} ${weather.data.current_weather_units.temperature}`}
