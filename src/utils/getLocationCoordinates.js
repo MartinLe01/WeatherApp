@@ -7,7 +7,9 @@ export async function getLocationCoordinates(cityName) {
   if (!response.data.results?.length) {
     return null;
   }
-  const {latitude, longitude} = response.data.results[0];
 
-  return {latitude, longitude};
+  console.log(response);
+  const {latitude, longitude, name} = response.data.results[0];
+
+  return {latitude, longitude, name};
 }

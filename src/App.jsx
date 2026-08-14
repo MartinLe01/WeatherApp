@@ -8,6 +8,7 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isDay, setIsDay] = useState(1);
 
   const inputRef = useRef(null);
 
@@ -16,7 +17,6 @@ function App() {
     setError(false);
 
     const cityName = inputRef.current.value;
-    setCity(cityName);
 
     const response = await getLocationCoordinates(cityName);
     if (!response) {
@@ -24,14 +24,16 @@ function App() {
       setIsLoading(false);
       return;
     }
+    setCity(response.name);
 
     const weatherData = await getWeatherData(
       response.latitude,
       response.longitude,
     );
+    setIsDay(weatherData.data.current_weather.is_day);
     setWeather(weatherData);
     setIsLoading(false);
-    //console.log(weatherData);
+    console.log(weatherData);
   }
 
   return (
@@ -40,10 +42,14 @@ function App() {
         <h1>Weather App</h1>
       </header>
 
-      <main className="m-auto max-w-lg h-96 backdrop-blur-lg border-solid border-2">
+      <div
+        className={`w-lg h-60 absolute ${isDay ? 'bg-amber-300' : 'bg-slate-200'} top-0 rounded-b-full inset-auto z-[-1] left-1/2 -translate-x-1/2`}
+      ></div>
+
+      <main className="m-auto max-w-lg h-96 backdrop-blur-lg border-solid border-2 mt-8 p-8 rounded-4xl">
         <section className="flex justify-center">
           <input
-            className="border-solid border-2 rounded-2xl"
+            className="border-solid border-2 rounded-full bg-slate-50 min-h-12"
             ref={inputRef}
             type="text"
           />
@@ -72,7 +78,7 @@ function App() {
       </main>
 
       <footer>
-        <p>
+        <p className="text-center">
           Weather data by <a href="https://open-meteo.com/">Open-Meteo.com</a>
         </p>
       </footer>
