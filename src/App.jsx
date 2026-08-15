@@ -92,10 +92,10 @@ function App() {
             <p>City not found. Please try again.</p>
           ) : (
             <div>
-              <h2 className={`${!city ? 'font-normal' : 'font-semibold'}`}>
+              <h2 className="font-normal">
                 {!city ? 'Search for city' : city}
               </h2>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center font-semibold">
                 <p>
                   {weather &&
                     `${Math.round(weather.data.current_weather.temperature)} ${weather.data.current_weather_units.temperature}`}
