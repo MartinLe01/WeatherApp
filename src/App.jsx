@@ -38,9 +38,9 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen font-display ${isDay ? 'bg-[#6BD6CF]' : 'bg-slate-900'}`}
+      className={`min-h-screen font-display p-12 ${isDay ? 'bg-[#6BD6CF]' : 'bg-slate-900'}`}
     >
-      <header className="relative z-10 text-4xl font-bold text-center mt-12">
+      <header className="relative z-10 text-4xl font-bold text-center">
         <h1>Weather App</h1>
       </header>
 
@@ -48,7 +48,7 @@ function App() {
         className={`w-lg h-60 absolute ${isDay ? 'bg-amber-300' : 'bg-slate-200'} top-0 rounded-b-full inset-auto left-1/2 -translate-x-1/2 transition-colors duration-700`}
       ></div>
 
-      <main className="m-auto max-w-lg h-96 backdrop-blur-xl border-solid border-2 mt-8 p-8 rounded-4xl mx-4 sm:mx-auto">
+      <main className="m-auto max-w-lg h-96 backdrop-blur-xl border-solid border-2 mt-8 p-8 rounded-4xl sm:mx-auto">
         <section>
           <div className="relative">
             <input
@@ -58,7 +58,7 @@ function App() {
             />
             <button
               onClick={handleSearch}
-              className="absolute right-1 bg-blue-500 top-1/2 -translate-y-1/2 rounded-full w-10 sm:w-24 h-10 flex justify-center items-center gap-1 text-slate-50 transition-[width]"
+              className="absolute right-1 bg-blue-500 top-1/2 -translate-y-1/2 rounded-full w-10 sm:w-24 h-10 flex justify-center items-center gap-1 text-slate-50 transition-[width] cursor-pointer"
             >
               <span className="material-symbols-outlined">search</span>
               <p className="hidden sm:block">Search</p>
@@ -108,7 +108,10 @@ function App() {
 
       <footer>
         <p className="text-center">
-          Weather data by <a href="https://open-meteo.com/">Open-Meteo.com</a>
+          Weather data by{' '}
+          <a className="underline" href="https://open-meteo.com/">
+            Open-Meteo.com
+          </a>
         </p>
       </footer>
     </div>
