@@ -31,7 +31,6 @@ export function SearchBar({
     setIsDay(weatherData.data.current_weather.is_day);
     setWeather(weatherData);
     setWeatherCode(weatherData.data.current_weather.weathercode);
-    console.log(weatherData.data.current_weather.weathercode);
     setIsLoading(false);
     console.log(weatherData);
   }
