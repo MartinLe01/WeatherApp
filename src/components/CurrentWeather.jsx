@@ -7,7 +7,7 @@ export function CurrentWeather({city, weather, weatherCode}) {
     : null;
 
   return (
-    <>
+    <div>
       <h2 className="font-normal text-center">
         {!city ? 'Search for city' : city}
       </h2>
@@ -18,6 +18,6 @@ export function CurrentWeather({city, weather, weatherCode}) {
             `${Math.round(weather.data.current_weather.temperature)} ${weather.data.current_weather_units.temperature}`}
         </p>
       </div>
-    </>
+    </div>
   );
 }

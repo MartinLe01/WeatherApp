@@ -1,4 +1,5 @@
 import {CurrentWeather} from './CurrentWeather';
+import {HighLowTemp} from './HighLowTemp';
 
 export function WeatherDisplay({city, weather, isLoading, error, weatherCode}) {
   return (
@@ -27,11 +28,15 @@ export function WeatherDisplay({city, weather, isLoading, error, weatherCode}) {
       ) : error ? (
         <p>City not found. Please try again.</p>
       ) : (
-        <CurrentWeather
-          city={city}
-          weather={weather}
-          weatherCode={weatherCode}
-        />
+        <div className="w-full flex flex-col gap-12">
+          <CurrentWeather
+            city={city}
+            weather={weather}
+            weatherCode={weatherCode}
+          />
+
+          <HighLowTemp weather={weather} />
+        </div>
       )}
     </section>
   );

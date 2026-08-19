@@ -10,7 +10,7 @@ export function WeatherCard({inputRef, setIsDay}) {
   const [weatherCode, setWeatherCode] = useState(null);
 
   return (
-    <main className="m-auto max-w-lg h-96 backdrop-blur-xl border-solid border-2 mt-8 p-8 rounded-4xl sm:mx-auto">
+    <main className="m-auto max-w-lg h-auto min-h-96 backdrop-blur-xl border-solid border-2 mt-8 p-8 rounded-4xl sm:mx-auto">
       <SearchBar
         inputRef={inputRef}
         setCity={setCity}
