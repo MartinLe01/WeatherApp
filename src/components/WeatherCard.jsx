@@ -7,7 +7,7 @@ export function WeatherCard({inputRef, setIsDay}) {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [weatherCode, setWeatherCode] = useState(0);
+  const [weatherCode, setWeatherCode] = useState(null);
 
   return (
     <main className="m-auto max-w-lg h-96 backdrop-blur-xl border-solid border-2 mt-8 p-8 rounded-4xl sm:mx-auto">
