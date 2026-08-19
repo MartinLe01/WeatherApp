@@ -33,7 +33,9 @@ export function WeatherDisplay({city, weather, isLoading, error, weatherCode}) {
         <p>City not found. Please try again.</p>
       ) : (
         <div>
-          <h2 className="font-normal">{!city ? 'Search for city' : city}</h2>
+          <h2 className="font-normal text-center">
+            {!city ? 'Search for city' : city}
+          </h2>
           <div className="flex flex-col items-center font-semibold">
             {iconUrl && (
               <img src={iconUrl} alt={slug} width={128} height={128} />

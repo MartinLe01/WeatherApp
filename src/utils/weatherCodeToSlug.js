@@ -30,5 +30,5 @@ export function weatherCodeToSlug(code) {
     99: 'thunderstorms-hail',
   };
 
-  return map[code] ?? 'not-available';
+  return map[code];
 }
