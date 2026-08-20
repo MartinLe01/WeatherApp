@@ -15,7 +15,7 @@ export function CurrentWeather({city, weather, weatherCode}) {
         {iconUrl && <img src={iconUrl} alt={slug} width={128} height={128} />}
         <p>
           {weather &&
-            `${Math.round(weather.data.current_weather.temperature)} ${weather.data.current_weather_units.temperature}`}
+            `${Math.round(weather.data.current_weather.temperature)}${weather.data.current_weather_units.temperature}`}
         </p>
       </div>
     </div>
