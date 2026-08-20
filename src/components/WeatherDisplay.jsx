@@ -1,5 +1,6 @@
 import {CurrentWeather} from './CurrentWeather';
 import {HighLowTemp} from './HighLowTemp';
+import {HourlyForecast} from './HourlyForecast';
 
 export function WeatherDisplay({city, weather, isLoading, error, weatherCode}) {
   return (
@@ -36,6 +37,8 @@ export function WeatherDisplay({city, weather, isLoading, error, weatherCode}) {
           />
 
           <HighLowTemp weather={weather} />
+
+          <HourlyForecast weather={weather} />
         </div>
       )}
     </section>
