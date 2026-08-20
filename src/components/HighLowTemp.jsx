@@ -37,13 +37,13 @@ export function HighLowTemp({weather}) {
       <p
         className="absolute top-4 text-base -translate-x-1/2"
         style={{left: `${lowestPercent}%`}}
-      >{`${lowestTemp}`}</p>
+      >{`${Math.round(lowestTemp)}°`}</p>
 
       {/* High indicator label */}
       <p
         className={`absolute ${isOverlapping() ? '-top-6' : 'top-4'} text-base -translate-x-1/2`}
         style={{left: `${highestPercent}%`}}
-      >{`${highestTemp}`}</p>
+      >{`${Math.round(highestTemp)}°`}</p>
     </div>
   );
 }

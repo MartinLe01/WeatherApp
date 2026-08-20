@@ -16,7 +16,7 @@ function App() {
       </header>
 
       <div
-        className={`w-lg h-60 absolute ${isDay ? 'bg-amber-300' : 'bg-slate-200'} top-0 rounded-b-full inset-auto left-1/2 -translate-x-1/2 transition-colors duration-700`}
+        className={`w-full max-w-lg h-60 absolute ${isDay ? 'bg-amber-300' : 'bg-slate-200'} top-0 rounded-b-full inset-auto left-1/2 -translate-x-1/2 transition-colors duration-700`}
       ></div>
 
       <WeatherCard inputRef={inputRef} setIsDay={setIsDay} />
