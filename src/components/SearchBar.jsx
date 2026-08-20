@@ -35,12 +35,17 @@ export function SearchBar({
     console.log(weatherData);
   }
 
+  function handleKeyDown(event) {
+    if (event.key === 'Enter') handleSearch();
+  }
+
   return (
     <section>
       <div className="relative">
         <input
           className="w-full border-solid border-2 rounded-full bg-slate-50 min-h-12 p-2"
           ref={inputRef}
+          onKeyDown={handleKeyDown}
           type="text"
         />
         <button
