@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import {HourlyForecastCard} from './HourlyForecastCard';
 
 export function HourlyForecast({weather}) {
   if (!weather) return null;
@@ -24,5 +25,18 @@ export function HourlyForecast({weather}) {
 
   console.log(hourlyData);
 
-  return <div></div>;
+  return (
+    <div className="h-24 flex gap-5 overflow-x-auto scrollbar-none">
+      {hourlyData.map((hour) => {
+        return (
+          <HourlyForecastCard
+            key={hour.time}
+            time={hour.time}
+            temp={hour.temp}
+            weather_code={hour.weather_code}
+          />
+        );
+      })}
+    </div>
+  );
 }
