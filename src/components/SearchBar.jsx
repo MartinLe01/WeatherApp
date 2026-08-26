@@ -65,7 +65,7 @@ export function SearchBar({
     <section>
       <div className="relative">
         <input
-          className="w-full border-solid border-2 rounded-full bg-slate-50 min-h-12 p-2 pl-4 relative z-20"
+          className="w-full border-solid border-2 rounded-full bg-slate-50 min-h-12 p-2 pl-4 relative z-20 text-slate-950"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -84,7 +84,7 @@ export function SearchBar({
             {suggestions.map((suggestion) => {
               return (
                 <div
-                  className="w-full min-h-8 flex items-center pl-4 hover:bg-slate-300"
+                  className="w-full min-h-8 flex items-center pl-4 text-slate-950 hover:bg-slate-300"
                   key={suggestion.id}
                   onClick={() => handleSuggestionClick(suggestion)}
                 >

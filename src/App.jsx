@@ -7,9 +7,9 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen font-display p-12 ${isDay ? 'bg-[#6BD6CF]' : 'bg-slate-900'}`}
+      className={`min-h-screen font-display p-12 ${isDay ? 'bg-[#6BD6CF] text-slate-950' : 'bg-slate-900 text-slate-50'}`}
     >
-      <header className="relative z-10 text-4xl font-bold text-center">
+      <header className="relative z-10 text-4xl font-bold text-center text-slate-950">
         <h1>Weather App</h1>
       </header>
 
