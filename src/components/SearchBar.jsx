@@ -80,7 +80,7 @@ export function SearchBar({
         </button>
 
         {suggestions?.length > 0 && (
-          <div className="bg-slate-200 w-full h-auto absolute rounded-3xl pt-12 pb-2 top-0 z-10">
+          <div className="bg-slate-200 w-full h-auto absolute rounded-3xl pt-12 pb-2 top-0 z-10 overflow-hidden">
             {suggestions.map((suggestion) => {
               return (
                 <div

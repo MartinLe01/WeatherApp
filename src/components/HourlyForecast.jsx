@@ -23,11 +23,11 @@ export function HourlyForecast({weather}) {
     };
   });
 
-  console.log(hourlyData);
+  console.log(hourlyData.slice(0, 24));
 
   return (
     <div className="h-24 flex gap-5 overflow-x-auto scrollbar-none">
-      {hourlyData.map((hour) => {
+      {hourlyData.slice(0, 24).map((hour) => {
         return (
           <HourlyForecastCard
             key={hour.time}
