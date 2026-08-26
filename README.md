@@ -40,7 +40,7 @@ npm run dev
 This was my first project after learning React and Tailwind. This project taught me a lot, particularly:
 
 - Working with React hooks (useState, useEffect, useRef)
-- Working with async data (search → geocode → fetch weather) and handling erros/loading states properly
+- Working with async data (search → geocode → fetch weather) and handling errors/loading states properly
 - Debouncing user input to prevent excessive API calls
 - Debugging real issues along the way - stale closures in state updates, CSS stacking context and `z-index` behavior, Vite's handling of dynamic imports, and inconsistent SVG sizing across an icon set
 - Structuring a real app into smaller, focused, and reusable components
