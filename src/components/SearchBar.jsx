@@ -1,8 +1,8 @@
+import {useState} from 'react';
 import {getLocationCoordinates} from '../utils/getLocationCoordinates';
 import {getWeatherData} from '../utils/getWeatherData';
 
 export function SearchBar({
-  inputRef,
   setCity,
   setWeather,
   setError,
@@ -10,13 +10,13 @@ export function SearchBar({
   setIsDay,
   setWeatherCode,
 }) {
+  const [inputValue, setInputValue] = useState('');
+
   async function handleSearch() {
     setIsLoading(true);
     setError(false);
 
-    const cityName = inputRef.current.value;
-
-    const response = await getLocationCoordinates(cityName);
+    const response = await getLocationCoordinates(inputValue);
     if (!response) {
       setError(true);
       setIsLoading(false);
@@ -44,7 +44,8 @@ export function SearchBar({
       <div className="relative">
         <input
           className="w-full border-solid border-2 rounded-full bg-slate-50 min-h-12 p-2"
-          ref={inputRef}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
           type="text"
         />
