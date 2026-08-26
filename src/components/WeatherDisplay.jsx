@@ -4,7 +4,7 @@ import {HourlyForecast} from './HourlyForecast';
 
 export function WeatherDisplay({city, weather, isLoading, error, weatherCode}) {
   return (
-    <section className="flex flex-col items-center text-3xl mt-4">
+    <section className="flex flex-col items-center text-3xl mt-4 relative z-0">
       {isLoading ? (
         <svg
           className="animate-spin h-24 w-24 text-blue-500"
